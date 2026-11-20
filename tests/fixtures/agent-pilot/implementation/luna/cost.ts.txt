@@ -1,0 +1,33 @@
+type Attempt = {
+  execution: number;
+  retry: number;
+  review: number;
+  fix: number;
+  context: number;
+};
+
+export function effectiveCost(
+  attempts: readonly Attempt[],
+  accepted: number,
+): number | null {
+  if (!Number.isInteger(accepted) || accepted < 0 || accepted > attempts.length) {
+    throw new RangeError('Accepted count must be an integer within attempt count');
+  }
+
+  let total = 0;
+  for (const attempt of attempts) {
+    for (const value of [
+      attempt.execution,
+      attempt.retry,
+      attempt.review,
+      attempt.fix,
+      attempt.context,
+    ]) {
+      if (!Number.isFinite(value) || value < 0) {
+        throw new RangeError('Cost fields must be finite and nonnegative');
+      }
+      total += value;
+    }
+  }
+  return accepted === 0 ? null : total / accepted;
+}

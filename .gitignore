@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.data/
+.env
+.env.*
+!.env.example
+test-results/
+playwright-report/
+coverage/
+.DS_Store
+*.log
+.agents/skills/vendor-*
+.playwright-cli/
+__pycache__/
+
+# Private local code graph
+graphify-out/

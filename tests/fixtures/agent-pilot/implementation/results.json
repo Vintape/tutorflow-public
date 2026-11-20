@@ -1,0 +1,50 @@
+[
+  {
+    "model": "luna",
+    "typecheck_passed": true,
+    "tasks": {
+      "payments": true,
+      "title": true,
+      "button": true,
+      "distinct": true,
+      "lesson": true,
+      "cost": true,
+      "generated_tests": true,
+      "documentation": true
+    },
+    "accepted": 8,
+    "total": 8,
+    "mutation_results": {
+      "correct": true,
+      "sum_voided": false,
+      "absolute": false,
+      "drop_odd": false
+    },
+    "verification_seconds": 0.918,
+    "answer_bytes": 3394
+  },
+  {
+    "model": "terra",
+    "typecheck_passed": true,
+    "tasks": {
+      "payments": true,
+      "title": true,
+      "button": true,
+      "distinct": true,
+      "lesson": true,
+      "cost": true,
+      "generated_tests": true,
+      "documentation": true
+    },
+    "accepted": 8,
+    "total": 8,
+    "mutation_results": {
+      "correct": true,
+      "sum_voided": false,
+      "absolute": false,
+      "drop_odd": false
+    },
+    "verification_seconds": 0.925,
+    "answer_bytes": 3048
+  }
+]

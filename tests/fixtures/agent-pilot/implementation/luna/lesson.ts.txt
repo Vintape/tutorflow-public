@@ -1,0 +1,16 @@
+export type Lesson = { id: string; ownerId: string; topic: string };
+
+export function getLesson(
+  actor: string | null,
+  id: string,
+  rows: readonly Lesson[],
+): { status: number; body: unknown } {
+  if (actor === null) {
+    return { status: 401, body: { error: 'UNAUTHORIZED' } };
+  }
+  const lesson = rows.find((row) => row.id === id && row.ownerId === actor);
+  if (lesson === undefined) {
+    return { status: 404, body: { error: 'NOT_FOUND' } };
+  }
+  return { status: 200, body: { id: lesson.id, topic: lesson.topic } };
+}

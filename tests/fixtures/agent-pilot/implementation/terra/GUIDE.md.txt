@@ -1,0 +1,3 @@
+# Operating note
+
+The graph is a private, static candidate map. Consult the exact source and tests to verify each finding. Interviews are postponed and do not block progress. Token and cost savings have not been measured; do not claim them. After new writes, any future cloud rollback must account for both PostgreSQL and the local canvas, rather than only deleting `.env`.

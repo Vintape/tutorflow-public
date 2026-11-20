@@ -1,0 +1,95 @@
+{
+  "context": {
+    "files": {
+      "src/board.ts": "imports client/sync; calls connectBoard(boardId)",
+      "client/sync.ts": "opens /api/boards/:id/sync using websocket",
+      "server/socket.ts": "imports server/permissions and server/runtime; on join and each message calls authorizeBoard; viewer mutations rejected",
+      "server/runtime.ts": "imports server/sqlite; commitRevision writes transaction and fsync then sends ack",
+      "server/permissions.ts": "loads board by id AND authenticated ownerId; guest requires unrevoked unexpired session",
+      "server/sqlite.ts": "SQLite authoritative canvas; PostgreSQL stores board ACL and lesson links",
+      "tests/socket.test.ts": "joins, viewer rejects, revoke and reconnect",
+      "tests/durability.test.ts": "ack, SIGKILL, reopen and compare snapshot",
+      "tests/ui.test.ts": "Apply draft then saved indicator and reload"
+    },
+    "rules": [
+      "money integer kopecks",
+      "unknown quota is unknown",
+      "static import edges are candidates, not complete runtime proof",
+      "no new external provider disclosure",
+      "interviews postponed"
+    ],
+    "snippets": {
+      "payment": "function total(rows){return rows.reduce((s,r)=>s+r.amount,0)} // rows can include voidedAt non-null",
+      "auth": "const item=await db.query(\"SELECT * FROM lessons WHERE id=$1\",[req.params.id]); return item;",
+      "ui": "<button disabled={busy && !valid}>Save</button>",
+      "type": "function title(value: string | null){return value.trim()}",
+      "dedupe": "const unique=xs=>[...new Set(xs)]; // preserve first order"
+    },
+    "measurements": {
+      "Luna": {
+        "execution": 2,
+        "retries": 1,
+        "review": 3,
+        "fixes": 2,
+        "accepted": 2
+      },
+      "Terra": {
+        "execution": 4,
+        "retries": 0,
+        "review": 1,
+        "fixes": 0,
+        "accepted": 2
+      }
+    }
+  },
+  "tasks": [
+    {
+      "id": "navigation",
+      "question": "Return ordered UI-to-durable-ACK file path as array; exclude unrelated modules."
+    },
+    {
+      "id": "ownership",
+      "question": "Return owning persistence engine for canvas and for ACL as object {canvas,acl}."
+    },
+    {
+      "id": "impact",
+      "question": "For changing server/socket.ts behavior, return two directly relevant tests as sorted array."
+    },
+    {
+      "id": "auth_bug",
+      "question": "Auth snippet: choose missing security predicate from [ownerId, lessonTitle, clientTheme]. Return string."
+    },
+    {
+      "id": "payment_fix",
+      "question": "Choose patch [A: sum all rows, B: filter rows where voidedAt == null before sum, C: round every amount]. Return letter."
+    },
+    {
+      "id": "ui_fix",
+      "question": "Choose disabled condition [A: busy && !valid, B: busy || !valid, C: !busy || valid]. Return letter."
+    },
+    {
+      "id": "type_fix",
+      "question": "Choose null-safe return [A: value.trim(), B: value?.trim() ?? \"\", C: String(value).trim()]. Return letter preserving null as empty."
+    },
+    {
+      "id": "test_cases",
+      "question": "For sum active payments, identify expected total from [{amount:120,voidedAt:null},{amount:80,voidedAt:\"yesterday\"},{amount:30,voidedAt:null}]. Return integer."
+    },
+    {
+      "id": "refactor",
+      "question": "Given unique([\"b\",\"a\",\"b\",\"c\",\"a\"]), return exact result array."
+    },
+    {
+      "id": "security_tests",
+      "question": "Return boolean: checking HTTP status alone proves denied request did not mutate database."
+    },
+    {
+      "id": "documentation",
+      "question": "Return boolean: successful static graph extraction proves every guest message is authorized at runtime."
+    },
+    {
+      "id": "effective_cost",
+      "question": "Compute total measured effort across execution/retry/review/fix divided by accepted for each candidate. Return {Luna:number,Terra:number}; units are synthetic effort, NOT actual API cost."
+    }
+  ]
+}

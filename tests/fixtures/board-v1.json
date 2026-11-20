@@ -1,0 +1,170 @@
+{
+  "format": "tutorflow-board",
+  "version": 1,
+  "engine": "tldraw",
+  "engineVersion": "5.6.0",
+  "schemaVersion": 1,
+  "document": {
+    "tombstoneHistoryStartsAtClock": 0,
+    "documentClock": 2,
+    "documents": [
+      {
+        "state": {
+          "gridSize": 10,
+          "name": "",
+          "meta": {},
+          "id": "document:document",
+          "typeName": "document"
+        },
+        "lastChangedClock": 0
+      },
+      {
+        "state": {
+          "meta": {},
+          "id": "page:page",
+          "name": "Page 1",
+          "index": "a1",
+          "typeName": "page"
+        },
+        "lastChangedClock": 0
+      },
+      {
+        "state": {
+          "id": "shape:fixture-math-formula",
+          "typeName": "shape",
+          "type": "math-formula",
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "index": "a1",
+          "parentId": "page:page",
+          "isLocked": false,
+          "opacity": 1,
+          "meta": {},
+          "props": {
+            "w": 240,
+            "h": 100,
+            "source": "\\frac{x^2}{2} + \\alpha"
+          }
+        },
+        "lastChangedClock": 1
+      },
+      {
+        "state": {
+          "id": "shape:fixture-math-graph",
+          "typeName": "shape",
+          "type": "math-graph",
+          "x": 450,
+          "y": 0,
+          "rotation": 0,
+          "index": "a2",
+          "parentId": "page:page",
+          "isLocked": false,
+          "opacity": 1,
+          "meta": {},
+          "props": {
+            "w": 400,
+            "h": 280,
+            "expression": "a*sin(x)",
+            "a": 2,
+            "xMin": -5,
+            "xMax": 5,
+            "yMin": -4,
+            "yMax": 4
+          }
+        },
+        "lastChangedClock": 1
+      },
+      {
+        "state": {
+          "id": "shape:fixture-math-geometry",
+          "typeName": "shape",
+          "type": "math-geometry",
+          "x": 900,
+          "y": 0,
+          "rotation": 0,
+          "index": "a3",
+          "parentId": "page:page",
+          "isLocked": false,
+          "opacity": 1,
+          "meta": {},
+          "props": {
+            "w": 400,
+            "h": 280,
+            "kind": "triangle",
+            "ax": 0,
+            "ay": 0,
+            "bx": 3,
+            "by": 0,
+            "cx": 0,
+            "cy": 4,
+            "radius": 2,
+            "showLengths": true,
+            "showAngles": true
+          }
+        },
+        "lastChangedClock": 1
+      },
+      {
+        "state": {
+          "id": "shape:fixture-code-python",
+          "typeName": "shape",
+          "type": "code-python",
+          "x": 1350,
+          "y": 0,
+          "rotation": 0,
+          "index": "a4",
+          "parentId": "page:page",
+          "isLocked": false,
+          "opacity": 1,
+          "meta": {},
+          "props": {
+            "w": 400,
+            "h": 280,
+            "source": "print(\"Сохранённый пример\")\n",
+            "version": 2
+          }
+        },
+        "lastChangedClock": 2
+      }
+    ],
+    "tombstones": {},
+    "schema": {
+      "schemaVersion": 2,
+      "sequences": {
+        "com.tldraw.store": 5,
+        "com.tldraw.asset": 1,
+        "com.tldraw.camera": 1,
+        "com.tldraw.document": 2,
+        "com.tldraw.instance": 26,
+        "com.tldraw.instance_page_state": 5,
+        "com.tldraw.page": 1,
+        "com.tldraw.instance_presence": 6,
+        "com.tldraw.pointer": 1,
+        "com.tldraw.shape": 4,
+        "com.tldraw.user": 1,
+        "com.tldraw.asset.image": 6,
+        "com.tldraw.asset.video": 5,
+        "com.tldraw.asset.bookmark": 2,
+        "com.tldraw.shape.arrow": 8,
+        "com.tldraw.shape.bookmark": 2,
+        "com.tldraw.shape.draw": 5,
+        "com.tldraw.shape.embed": 4,
+        "com.tldraw.shape.frame": 1,
+        "com.tldraw.shape.geo": 12,
+        "com.tldraw.shape.group": 0,
+        "com.tldraw.shape.highlight": 4,
+        "com.tldraw.shape.image": 5,
+        "com.tldraw.shape.line": 5,
+        "com.tldraw.shape.note": 13,
+        "com.tldraw.shape.text": 4,
+        "com.tldraw.shape.video": 4,
+        "com.tldraw.shape.math-formula": 0,
+        "com.tldraw.shape.math-graph": 0,
+        "com.tldraw.shape.math-geometry": 0,
+        "com.tldraw.shape.code-python": 0,
+        "com.tldraw.binding.arrow": 1
+      }
+    }
+  }
+}

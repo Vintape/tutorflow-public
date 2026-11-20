@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import { activeTotal } from './payments-under-test.mjs';
+
+assert.equal(activeTotal([]), 0);
+const rows = [
+  { amount: 105, voidedAt: null },
+  { amount: -21, voidedAt: null },
+  { amount: 40, voidedAt: '2026-01-01' },
+];
+const original = structuredClone(rows);
+assert.equal(activeTotal(rows), 84);
+assert.deepEqual(rows, original);
+assert.throws(() => activeTotal([{ amount: 0.5, voidedAt: null }]), RangeError);
+assert.throws(() => activeTotal([{ amount: Number.MAX_SAFE_INTEGER, voidedAt: null }, { amount: 1, voidedAt: null }]), RangeError);
+assert.equal(activeTotal([{ amount: NaN, voidedAt: 'voided' }]), 0);

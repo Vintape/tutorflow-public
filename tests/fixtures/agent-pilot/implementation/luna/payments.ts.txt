@@ -1,0 +1,17 @@
+export type Payment = { amount: number; voidedAt: string | null };
+
+export function activeTotal(rows: Payment[]): number {
+  let total = 0;
+  for (const row of rows) {
+    if (row.voidedAt !== null) continue;
+    if (!Number.isSafeInteger(row.amount)) {
+      throw new RangeError('Active payment amount must be a safe integer');
+    }
+    const next = total + row.amount;
+    if (!Number.isSafeInteger(next)) {
+      throw new RangeError('Active payment total must be a safe integer');
+    }
+    total = next;
+  }
+  return total;
+}

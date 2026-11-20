@@ -1,0 +1,5 @@
+import React from 'react';
+
+export function SaveButton(props: { busy: boolean; valid: boolean; onSave: () => void }): React.ReactElement {
+  return <button type="button" disabled={props.busy || !props.valid} onClick={props.onSave}>Save</button>;
+}
