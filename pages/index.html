@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Интерактивное демо TutorFlow — расписание, доски, отчёты и оплаты частного репетитора.">
+  <meta name="theme-color" content="#f6f7f3">
+  <title>TutorFlow — интерактивное демо</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./demo.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#workspace">Перейти к содержимому</a>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#schedule">
+        <span class="brand-mark" data-icon="brand"></span>
+        <span>TutorFlow<small>Для репетиторов</small></span>
+      </a>
+      <nav aria-label="Рабочее пространство">
+        <a href="#schedule" data-view="schedule"><span data-icon="calendar"></span>Расписание</a>
+        <a href="#board" data-view="board"><span data-icon="board"></span>Доска</a>
+        <a href="#reports" data-view="reports"><span data-icon="report"></span>Отчёты</a>
+        <a href="#finances" data-view="finances"><span data-icon="wallet"></span>Финансы</a>
+      </nav>
+      <div class="sidebar-note"><span class="indicator"></span>Публичное демо</div>
+    </aside>
+    <div class="content">
+      <header class="topbar">
+        <span><span class="indicator"></span>Интерактивное демо</span>
+        <span class="topbar-note">Все данные вымышлены</span>
+      </header>
+      <main id="workspace" tabindex="-1">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <h1 id="hero-title">Рабочая неделя<br>репетитора</h1>
+            <p>Расписание, доски, отчёты и оплаты в одном месте. Откройте любой раздел, чтобы попробовать TutorFlow.</p>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="hero-grid"></div>
+            <div class="art-card art-top"><span class="art-icon" data-icon="calendar"></span><span><i></i><i></i></span></div>
+            <div class="art-card art-bottom"><span class="art-icon" data-icon="board"></span><span><i></i><i></i></span></div>
+            <span class="art-spark">✳</span>
+          </div>
+        </section>
+        <div id="view"></div>
+      </main>
+      <footer><strong>TutorFlow</strong><span>Демонстрационное рабочее пространство</span></footer>
+    </div>
+  </div>
+  <dialog id="lesson-dialog" aria-labelledby="lesson-title"></dialog>
+</body>
+</html>

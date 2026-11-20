@@ -32,3 +32,7 @@ pnpm build
 [Восстановление локального хранилища](docs/WORKSPACE_BACKUP.md) · [Репетиция PostgreSQL и SQLite](docs/POSTGRES_CANVAS_RECOVERY.md)
 
 Доска использует tldraw. Условия её использования в опубликованном серверном приложении следует оценивать по лицензии SDK.
+
+## GitHub Pages
+
+Файлы демонстрации находятся в `pages/`. Их можно открыть локально через `python3 -m http.server --directory pages 8080`. GitHub Pages публикует корень ветки `gh-pages`, в которую копируются файлы из `pages/`.
